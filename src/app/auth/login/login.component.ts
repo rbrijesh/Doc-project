@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
   save(isValid) {
     this.formSubmitted = true;
     if (isValid) {
-      if (this.userData.userName) {
-        if (this.userData.type === 'doctor') {
+      if (this.userData?.userName) {
+        if (this.userData?.type === 'doctor') {
           this.router.navigate(['/pages/dashboard']);
         }
       } else {
