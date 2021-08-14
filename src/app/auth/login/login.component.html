@@ -1,0 +1,32 @@
+<nb-layout class="body-bg">
+    <nb-layout-column class="login-area login-s2">
+        <nb-card class="login-box cust-nb-card">
+            <nb-card-header class="login-form-head">
+              <img src="../../../assets/images/logo.png">
+              <h6>Sign In</h6>
+            </nb-card-header>
+            <nb-card-body class="login-form-body">
+              <form [formGroup]="form" (ngSubmit)="save(form.valid)">
+                <div class="form-group">
+                  <label class="label">User Name <sup class="text-danger">*</sup></label>
+                  <input type="text" nbInput fullWidth placeholder="User Name" formControlName="userName">
+                  <small class="text-danger" *ngIf="(!formControl('userName').pristine && formControl('userName').hasError('required')) || formSubmitted">
+                    Field is required
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label class="label">Password <sup class="text-danger">*</sup></label>
+                  <input type="password" nbInput fullWidth placeholder="Password" autocomplete="new-password" formControlName="password">
+                  <small class="text-danger" *ngIf="(!formControl('password').pristine && formControl('password').hasError('required')) || formSubmitted">
+                    Field is required
+                  </small>
+                </div>
+                <button class="float-right size-small" type="submit" nbButton status="info" outline>Sign In</button>
+                <div class="form-footer text-center mt-5">
+                  <p class="text-muted">Don't have an Account? <a routerLink="/register">Sign Up</a></p>
+                </div>
+              </form>
+            </nb-card-body>
+        </nb-card>
+  </nb-layout-column>
+</nb-layout>

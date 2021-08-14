@@ -1,0 +1,61 @@
+@import '../../@theme/styles/custom';
+.body-bg{
+    background:red;
+}
+.login-s2 {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.login-form-head img{
+    height: 60px;
+}
+.login-s2:before {
+    content: '';
+    position: absolute;
+    height: 206%;
+    width: 97%;
+    background: #fcfcff;
+    border-radius: 50%;
+    left: -42%;
+    z-index: -1;
+    top: -47%;
+    box-shadow: inset 0 0 51px rgba(0, 0, 0, 0.1);
+}
+.login-box {
+    display: -webkit-box;
+    display: flex;
+    form{
+        margin: auto;
+        width: 450px;
+        max-width: 100%;
+    }
+}
+.login-form-head {
+    text-align: center;
+    padding: 20px 50px 20px 50px;
+    img{
+     vertical-align: middle;   
+    }
+}
+.cust-nb-card{
+    background-color:transparent!important; 
+    border:none!important;
+    border-radius: 0!important;
+    box-shadow: none!important;
+    nb-card-header{
+        border-bottom:none!important;
+    }
+}
+a{
+    text-decoration: none;
+}
+.form-footer{
+    .mt-5{
+        margin-top: 3rem !important;
+    }
+    .main-logo {
+        height: 30px;
+    }
+}

@@ -1,0 +1,35 @@
+<nb-card>
+  <nb-card-header>
+    Patient list
+    <button class="float-right text-transform-none" nbButton size="small" status="info" outline (click)="addNewPatient()">Add New</button>
+  </nb-card-header>
+  <nb-card-body>
+    <table
+    class="table table-sm row-bordered hover"
+    datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+  >
+    <thead>
+      <tr class="text-center">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" *ngFor="let item of patients; let i = index; trackBy: trackByFn">
+          <td>{{item.firstName + ' ' + item.lastName}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.age}}</td>
+          <td>
+            <nb-icon  class="cursor-pointer text-info" icon="edit-outline" (click)="editPatient(i)"></nb-icon>
+            <nb-icon  class="cursor-pointer text-warning" icon="eye-outline" (click)="view(i)"></nb-icon>
+            <nb-icon  class="cursor-pointer text-danger" icon="trash-2-outline" (click)="deletePatient(i)"></nb-icon>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,172 @@
+<nb-card class="mxw-700 miw-6000">
+  <nb-card-header>
+    <span *ngIf="type === 'add'">
+
+    </span>
+    <span *ngIf="type === 'update'">
+
+    </span>
+    <span *ngIf="type === 'view'">
+
+    </span>
+      <nb-icon class="float-right cursor-pointer" icon="close-outline" (click)="close()"></nb-icon>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="form" (ngSubmit)="save(form.valid)">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="label"
+              >First Name <sup class="text-danger">*</sup></label
+            >
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              placeholder="First Name"
+              fieldSize="small"
+              formControlName="firstName"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                (!formControl('firstName').pristine &&
+                  formControl('firstName').hasError('required')) ||
+                formSubmitted
+              "
+            >
+              Field is required
+            </small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="label"
+              >Last Name <sup class="text-danger">*</sup></label
+            >
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              placeholder="Last Name"
+              fieldSize="small"
+              formControlName="lastName"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                (!formControl('lastName').pristine &&
+                  formControl('lastName').hasError('required')) ||
+                formSubmitted
+              "
+            >
+              Field is required
+            </small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="label"
+              >Email ID <sup class="text-danger">*</sup></label
+            >
+            <input
+              type="email"
+              nbInput
+              fullWidth
+              placeholder="EmailID"
+              fieldSize="small"
+              formControlName="email"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                (!formControl('email').pristine &&
+                  formControl('email').hasError('required')) ||
+                formSubmitted
+              "
+            >
+              Field is required
+            </small>
+            <small
+              class="text-danger"
+              *ngIf="
+                !formControl('email').pristine &&
+                formControl('email').hasError('email')
+              "
+            >
+              Email must be valid.
+            </small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="label">Gender <sup class="text-danger">*</sup></label>
+            <nb-select
+              class="col-sm-10 p-0"
+              size="small"
+              fullWidth
+              formControlName="gender"
+            >
+              <nb-option *ngFor="let gen of genders" [value]="gen.value">{{
+                gen.name
+              }}</nb-option>
+            </nb-select>
+            <small
+              class="text-danger"
+              *ngIf="
+                (!formControl('gender').pristine &&
+                  formControl('gender').hasError('required')) ||
+                formSubmitted
+              "
+            >
+              Field is required
+            </small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label class="label">Age <sup class="text-danger">*</sup></label>
+            <input
+              type="number"
+              nbInput
+              fullWidth
+              placeholder="age"
+              fieldSize="small"
+              formControlName="age"
+              ngxNumberOnly
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                (!formControl('age').pristine &&
+                  formControl('age').hasError('required')) ||
+                formSubmitted
+              "
+            >
+              Field is required
+            </small>
+          </div>
+        </div>
+      </div>
+      <button *ngIf="type !== 'view'"
+        class="float-left size-small"
+        type="button"
+        nbButton
+        status="danger"
+        outline
+        (click)="reset()"
+      >
+        Reset
+      </button>
+      <button *ngIf="type !== 'view'"
+        class="float-right size-small"
+        type="submit"
+        nbButton
+        status="info"
+        outline
+      >
+        Submit
+      </button>
+    </form>
+  </nb-card-body>
+</nb-card>

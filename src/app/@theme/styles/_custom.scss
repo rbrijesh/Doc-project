@@ -1,0 +1,109 @@
+@import "custom/margin.scss";
+@import "custom/border.scss";
+
+@media (min-width: 961px) {
+    .miw-600 {
+      min-width: 600px !important;
+    }
+    .mxw-600 {
+      max-width: 600px !important;
+    }
+    .mxw-650 {
+      max-width: 650px !important;
+    }
+    .mxw-700 {
+      max-width: 700px!important;
+    }
+    .mxw-800 {
+      max-width: 800px!important;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .mxh-400{
+      max-height: 400px !important;
+    }
+  }
+  
+  @media only screen and (min-width:321px) and (max-width:768px) {
+      nb-dialog-container {
+        overflow: hidden scroll;
+        margin-right: -5px;
+      }
+      .miw-150{
+        min-width:150px!important;
+      }
+  }
+  
+.nb-theme-default ng2-smart-table .ng2-smart-actions {
+    padding: 0;
+    height: auto!important;
+}
+
+.nb-theme-default [nbInput].status-basic{
+  background-color: transparent!important;
+}
+.nb-theme-default [nbInput].status-danger:hover{
+  background-color: transparent!important;
+}
+.nb-theme-default nb-select.status-basic {
+  background-color: transparent!important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
+     padding: 0!important; 
+}
+.m-w-130{
+     min-width: 130px;
+ }
+ .file-box {
+     border: 2px solid #edf1f7;
+     padding: 0;
+     // background-color: #ffffff;
+     position: relative;
+     margin-bottom: 20px;
+     margin-right: 5px;
+     box-shadow: 1px #edf1f7;
+     border-radius: 5px;
+   }
+ .folder-box {
+     border: 2px solid #edf1f7;
+     padding: 10px;
+     position: relative;
+     border-radius: 5px;
+     margin-bottom: 20px;
+     margin-right: 5px;
+ }
+ .file .icon,
+ .file .image {
+   min-height:149px;
+   max-height: 150px;
+   overflow: hidden;
+   object-fit: contain;
+   display: block;
+   padding: 5px;
+   text-align: center;
+ }
+ .file-name {
+     padding: 10px;
+     background-color: #edf1f7;
+     border-top: 2px solid #edf1f7;
+ }
+ .file-name small {
+     color: #676a6c;
+ }
+ .image img{
+     width: 100%;
+     display: block;
+     // height:-webkit-fill-available;
+ }
+ .icon i{
+     // display: inline-block;
+     vertical-align: middle;
+     text-align: center;
+     font-size: 64px;
+     margin-top: 20%;
+ }
