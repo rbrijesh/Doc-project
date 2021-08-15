@@ -6,9 +6,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ThemeModule } from 'app/@theme/theme.module';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NumberOnlyDirective } from './directives/number-only.directive';
-import { DataTablesModule } from "angular-datatables";
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 @NgModule({
   declarations: [LoaderComponent, NumberOnlyDirective],
   imports: [
@@ -50,7 +48,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ThemeModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    Ng2SmartTableModule 
   ],
   exports: [
     NbCardModule,
@@ -91,7 +89,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     FormsModule,
     ReactiveFormsModule,
     NumberOnlyDirective,
-    DataTablesModule
+    Ng2SmartTableModule 
   ]
 })
 export class SharedModule { }

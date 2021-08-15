@@ -1,13 +1,13 @@
 <nb-card class="mxw-700 miw-6000">
   <nb-card-header>
     <span *ngIf="type === 'add'">
-
+      Add Patient Details
     </span>
     <span *ngIf="type === 'update'">
-
+      Update Patient Details
     </span>
     <span *ngIf="type === 'view'">
-
+      View Patient Details
     </span>
       <nb-icon class="float-right cursor-pointer" icon="close-outline" (click)="close()"></nb-icon>
   </nb-card-header>
@@ -27,16 +27,14 @@
               fieldSize="small"
               formControlName="firstName"
             />
-            <small
-              class="text-danger"
-              *ngIf="
-                (!formControl('firstName').pristine &&
-                  formControl('firstName').hasError('required')) ||
-                formSubmitted
-              "
-            >
-              Field is required
-            </small>
+            <div *ngIf="formSubmitted || (formControl('firstName').dirty && formControl('firstName').invalid)">
+              <small class="text-danger" *ngIf="formControl('firstName').hasError('required')">
+                Field is required
+              </small>
+              <small class="text-danger" *ngIf="formControl('firstName').hasError('pattern')">
+                Only alphabets are allowed
+              </small>
+            </div>
           </div>
         </div>
         <div class="col-sm-6">
@@ -52,16 +50,14 @@
               fieldSize="small"
               formControlName="lastName"
             />
-            <small
-              class="text-danger"
-              *ngIf="
-                (!formControl('lastName').pristine &&
-                  formControl('lastName').hasError('required')) ||
-                formSubmitted
-              "
-            >
-              Field is required
-            </small>
+            <div *ngIf="formSubmitted || (formControl('lastName').dirty && formControl('lastName').invalid)">
+              <small class="text-danger" *ngIf="formControl('lastName').hasError('required')">
+                Field is required
+              </small>
+              <small class="text-danger" *ngIf="formControl('firstName').hasError('pattern')">
+                Only alphabets are allowed
+              </small>
+            </div>
           </div>
         </div>
         <div class="col-sm-6">
@@ -77,25 +73,14 @@
               fieldSize="small"
               formControlName="email"
             />
-            <small
-              class="text-danger"
-              *ngIf="
-                (!formControl('email').pristine &&
-                  formControl('email').hasError('required')) ||
-                formSubmitted
-              "
-            >
-              Field is required
-            </small>
-            <small
-              class="text-danger"
-              *ngIf="
-                !formControl('email').pristine &&
-                formControl('email').hasError('email')
-              "
-            >
-              Email must be valid.
-            </small>
+            <div *ngIf="formSubmitted || (formControl('email').dirty && formControl('email').invalid)">
+              <small class="text-danger" *ngIf="formControl('email').hasError('required')">
+                Field is required
+              </small>
+              <small class="text-danger" *ngIf="formControl('email').hasError('email')">
+                Email must be valid.
+              </small>
+            </div>
           </div>
         </div>
         <div class="col-sm-6">
@@ -111,16 +96,11 @@
                 gen.name
               }}</nb-option>
             </nb-select>
-            <small
-              class="text-danger"
-              *ngIf="
-                (!formControl('gender').pristine &&
-                  formControl('gender').hasError('required')) ||
-                formSubmitted
-              "
-            >
-              Field is required
-            </small>
+            <div *ngIf="formSubmitted || (formControl('gender').dirty && formControl('gender').invalid)">
+              <small class="text-danger" *ngIf="formControl('gender').hasError('required')">
+                Field is required
+              </small>
+            </div>
           </div>
         </div>
         <div class="col-sm-6">
@@ -135,16 +115,11 @@
               formControlName="age"
               ngxNumberOnly
             />
-            <small
-              class="text-danger"
-              *ngIf="
-                (!formControl('age').pristine &&
-                  formControl('age').hasError('required')) ||
-                formSubmitted
-              "
-            >
-              Field is required
-            </small>
+            <div *ngIf="formSubmitted || (formControl('age').dirty && formControl('age').invalid)">
+              <small class="text-danger" *ngIf="formControl('age').hasError('required')">
+                Field is required
+              </small>
+            </div>
           </div>
         </div>
       </div>

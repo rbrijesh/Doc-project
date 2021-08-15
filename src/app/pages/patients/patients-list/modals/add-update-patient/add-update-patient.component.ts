@@ -35,8 +35,8 @@ export class AddUpdatePatientComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]],
+      lastName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]],
       email: ['', [Validators.required, Validators.email]],
       age: [null, [Validators.required]],
       gender: ['male', [Validators.required]]

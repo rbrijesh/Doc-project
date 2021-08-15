@@ -25,8 +25,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { RegisterComponent } from './auth/register/register.component';
 import { NotFoundComponent } from './auth/not-found/not-found.component';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -51,7 +49,6 @@ import { DataTablesModule } from 'angular-datatables';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
-    DataTablesModule,
     SharedModule,
   ],
   bootstrap: [AppComponent],

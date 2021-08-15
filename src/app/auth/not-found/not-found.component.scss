@@ -1,20 +1,3 @@
-.flex-centered {
-    margin: auto;
-  }
-  nb-card-body {
-    display: flex;
-  }
-  
-  .title {
-    text-align: center;
-  }
-  
-  .sub-title {
-    text-align: center;
-    display: block;
-    margin-bottom: 3rem;
-  }
-  
-  .home-button {
-    margin-bottom: 2rem;
-  }  
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

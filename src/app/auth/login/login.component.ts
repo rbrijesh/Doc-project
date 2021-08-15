@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
       if (this.userData?.userName) {
         if (this.userData?.type === 'doctor') {
           this.router.navigate(['/pages/dashboard']);
+        } else {
+          this.router.navigate(['/pages/dashboard']);
         }
-      } else {
-        // toastr not valid user
       }
     }
   }

@@ -19,9 +19,11 @@
                   fieldSize="small"
                   formControlName="firstName"
                 />
-                <small class="text-danger" *ngIf="(!formControl('firstName').pristine && formControl('firstName').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
+                <div *ngIf="formSubmitted || (formControl('firstName').dirty && formControl('firstName').invalid)">
+                  <small class="text-danger" *ngIf="formControl('firstName').hasError('required')">
+                    Field is required
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -35,9 +37,11 @@
                   fieldSize="small"
                   formControlName="lastName"
                 />
-                <small class="text-danger" *ngIf="(!formControl('lastName').pristine && formControl('lastName').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
+                <div *ngIf="formSubmitted || (formControl('lastName').dirty && formControl('lastName').invalid)">
+                  <small class="text-danger" *ngIf="formControl('lastName').hasError('required')">
+                    Field is required
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -52,9 +56,11 @@
                   formControlName="mobileNumber"
                   ngxNumberOnly
                 />
-                <small class="text-danger" *ngIf="(!formControl('mobileNumber').pristine && formControl('mobileNumber').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
+                <div *ngIf="formSubmitted || (formControl('mobileNumber').dirty && formControl('mobileNumber').invalid)">
+                  <small class="text-danger" *ngIf="formControl('mobileNumber').hasError('required')">
+                    Field is required
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -68,12 +74,14 @@
                   fieldSize="small"
                   formControlName="email"
                 />
-                <small class="text-danger" *ngIf="(!formControl('email').pristine && formControl('email').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
-                <small class="text-danger" *ngIf="(!formControl('email').pristine && formControl('email').hasError('email'))">
-                  Email must be valid.
-                </small>
+                <div *ngIf="formSubmitted || (formControl('email').dirty && formControl('email').invalid)">
+                  <small class="text-danger" *ngIf="formControl('email').hasError('required')">
+                    Field is required
+                  </small>
+                  <small class="text-danger" *ngIf="formControl('email').hasError('email')">
+                    Email must be valid.
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -87,9 +95,11 @@
                   fieldSize="small"
                   formControlName="userName"
                 />
-                <small class="text-danger" *ngIf="(!formControl('userName').pristine && formControl('userName').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
+                <div *ngIf="formSubmitted || (formControl('userName').dirty && formControl('userName').invalid)">
+                  <small class="text-danger" *ngIf="formControl('userName').hasError('required')">
+                    Field is required
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -98,9 +108,11 @@
                 <nb-select class="col-sm-10 p-0" size="small" fullWidth formControlName="type">
                   <nb-option *ngFor="let type of types" [value]="type.value">{{type.name}}</nb-option>
                 </nb-select>
-                <small class="text-danger" *ngIf="(!formControl('type').pristine && formControl('type').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
+                <div *ngIf="formSubmitted || (formControl('type').dirty && formControl('type').invalid)">
+                  <small class="text-danger" *ngIf="formControl('type').hasError('required')">
+                    Field is required
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -114,9 +126,11 @@
                   fieldSize="small"
                   formControlName="password"
                 />
-                <small class="text-danger" *ngIf="(!formControl('password').pristine && formControl('password').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
+                <div *ngIf="formSubmitted || (formControl('password').dirty && formControl('password').invalid)">
+                  <small class="text-danger" *ngIf="formControl('password').hasError('required')">
+                    Field is required
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
@@ -130,12 +144,14 @@
                   fieldSize="small"
                   formControlName="confirmPassword"
                 />
-                <small class="text-danger" *ngIf="(!formControl('confirmPassword').pristine && formControl('confirmPassword').hasError('required')) || formSubmitted">
-                  Field is required
-                </small>
-                <small class="text-danger" *ngIf="(!formControl('confirmPassword').pristine && formControl('confirmPassword').hasError('notEquivalent'))">
-                  Password must match.
-                </small>
+                <div *ngIf="formSubmitted || (formControl('confirmPassword').dirty && formControl('confirmPassword').invalid)">
+                  <small class="text-danger" *ngIf="formControl('confirmPassword').hasError('required')">
+                    Field is required
+                  </small>
+                  <small class="text-danger" *ngIf="formControl('confirmPassword').hasError('notEquivalent')">
+                    Password must match.
+                  </small>
+                </div>
               </div>
             </div>
           </div>

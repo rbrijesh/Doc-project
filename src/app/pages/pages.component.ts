@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { CommonService } from 'app/shared/services/common.service';
 
 import { MENU_ITEMS } from './pages-menu';
+import { USER_MENU_ITEMS } from './user-menu';
 
 @Component({
   selector: 'ngx-pages',
@@ -14,5 +16,20 @@ import { MENU_ITEMS } from './pages-menu';
 })
 export class PagesComponent {
 
-  menu = MENU_ITEMS;
+  menu = [];
+
+  constructor(
+    private common: CommonService
+  ) {
+
+    if(common.getSession('user').type === 'doctor') {
+      this.menu = MENU_ITEMS;
+    } else {
+      this.menu = USER_MENU_ITEMS;
+    }
+
+  }
+
+
+
 }
